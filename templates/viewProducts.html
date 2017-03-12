@@ -1,0 +1,20 @@
+<section class="middle">
+    <h1>Shopular</h1>
+    <div class="inventory-container">
+        <table class='inventory'>
+            <tr>
+               <th ng-click="products.orderByField='name'; products.reverseSort = !products.reverseSort">Name</th>
+               <th ng-click="products.orderByField='totalPrice'; products.reverseSort = !products.reverseSort">Color</th>
+               <th ng-click="products.orderByField='quantity'; products.reverseSort = !products.reverseSort">Quantity</th>
+               <th ng-click="prodcuts.orderByField='color'; products.reverseSort = !products.reverseSort">Price</th>
+             </tr>
+
+            <tr ng-repeat="item in products.allItemsArray | orderBy: products.orderByField: products.reverseSort" class='td-list'>
+                <td>{{item.name}}</td>
+                <td>{{item.color}}</td>
+                <td>{{item.quantity}}</td>
+                <td>{{products.getPrice(item.price, item.discount) | currency}}<img src='./src/images/salesicon.png' ng-show='products.getDiscount(item.discount)' class='sale'></td>
+            </tr>
+        </table>
+    </div>
+</section>

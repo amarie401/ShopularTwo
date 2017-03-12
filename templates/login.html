@@ -1,0 +1,9 @@
+<div class="container" ng-controller="LoginController">
+
+    <form name="loginForm" ng-submit = "login.submit()" ng-controller="LoginController">
+        <input class='inputField' type="text" name="userName" placeholder="Username" ng-model="login.inputInfo.userName">
+        <input class='inputField' type="password" name="passWord" placeholder="Password" ng-model="login.inputInfo.passWord">
+        <button class='userInfoBtn' type="submit" name="submitLogin">Login</button>
+    </form>
+
+</div>

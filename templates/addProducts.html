@@ -1,0 +1,23 @@
+
+<section class="top-right">
+    <form name="shopForm" novalidate ng-submit="shopForm.$valid && products.addItems()">
+        <fieldset>
+            <!-- Name -->
+            <label for="name">Name:</label>
+            <input name="name" ng-class="{'invalid': shopForm.name.$error.minlength}" ng-model="products.newItem.name" ng-minlength="products.minLength" ng-required="true" type="text" placeholder="Item...">
+            <!-- Price -->
+            <label for="price">Price:</label>
+            <input name="price" ng-model="products.newItem.price" type="number" placeholder="Price...">
+            <!-- Quantity -->
+            <label for="quantity">Quantity:</label>
+            <input name="quantity" ng-model="products.newItem.quantity" type="number" placeholder="Quantity...">
+            <!-- Color -->
+            <label for="color">Color:</label>
+            <input name="color" ng-class="{'invalid': shopForm.color.$error.minlength}" ng-required="true" ng-model="products.newItem.color" ng-minlength="products.minLength" type="text"  placeholder="Color...">
+            <!-- Price -->
+            <label for="discount">Discount:</label>
+            <input name="discount" ng-model="products.newItem.discount" type="number" placeholder="Discount...">
+            <input type="submit" ng-disabled="shopForm.$invalid" value="Submit">
+        </fieldset>
+    </form>
+</section>

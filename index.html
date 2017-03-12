@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang='en' ng-app="shopularApp">
+
+<head>
+    <meta charset='UTF-8'>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Shopular</title>
+    <link rel="stylesheet" href="lib/styles/main.css">
+</head>
+
+    <header ng-controller="LoginController as login">
+
+        <table class=userInfoTable>
+          <tr>
+            <td class="userInfo">Welcome,  {{login.getInfo()[0].userName}}!</td>
+          </tr>
+          <tr>
+              <td>You logged in on: {{'' | currentdate}}</td>
+          </tr>
+        </table ng-click="login.test">
+
+        <body ng-controller="ProductsController">
+          <nav class="nav">
+              <div class="container">
+                  <ul class="nav-list">
+                      <li class="nav-list-item">
+                          <a ui-sref = "shopularHome.login">Login</a>
+                      </li>
+                      <li class="nav-list-item">
+                          <a ui-sref = "shopularHome.view">View Your Products</a>
+                      </li>
+                      <li class="nav-list-item">
+                          <a ui-sref = "shopularHome.add">Add a Product</a>
+                      </li>
+                  </ul>
+              </div>
+          </nav>
+
+    </header>
+
+
+    <div class="container">
+      <ui-view></ui-view>
+    </div>
+
+
+    <script src="src/js/vendor/jquery-3.1.1.min.js"></script>
+    <script src="./src/js/vendor/angular.min.js"></script>
+    <script src="./src/js/vendor/angular-ui-router.min.js"></script>
+    <script src="./src/js/vendor/angular-local-storage.min.js"></script>
+    <script src='src/js/app.js'></script>
+    <script src='src/js/services/allInventoryService.js'></script>
+    <script src='src/js/controllers/products-controller.js'></script>
+    <script src='src/js/controllers/user-login-controller.js'></script>
+</body>
+
+</html>
